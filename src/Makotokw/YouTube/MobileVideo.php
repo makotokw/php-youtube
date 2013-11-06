@@ -4,7 +4,7 @@ namespace Makotokw\YouTube;
 
 use Httpful\Request;
 
-class MobileVideo
+class MobileVideo extends Video
 {
     const DEFAULT_MOBILE_USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3';
 
@@ -12,23 +12,13 @@ class MobileVideo
     const QUALITY_MEDIUM = 1;
     const QUALITY_LARGE = 2;
 
-    /**
-     * @var string
-     */
-    protected $videoId;
-
-    /**
-     * @var array
-     */
-    protected $contentAttributes;
 
     /**
      * @param string $videoId
      */
     public function __construct($videoId)
     {
-        $this->videoId = $videoId;
-        $this->contentAttributes = array();
+        parent::__construct($videoId);
     }
 
     /**
